@@ -209,15 +209,11 @@ hostAliases: []
   #     - "my.host.com"
 
 ingress:
-  enabled: true
-  annotations:
-    kubernetes.io/ingress.class: nginx
-    hosts: ['grafana.k3s.local']
-    path: "/"
-    tls:
-    - secretName: tls-credential
-      hosts:
-      - grafana.k3s.local
+enabled: true
+annotations:
+kubernetes.io/ingress.class: nginx
+hosts: ['grafana.k3s.local']
+path: "/"
 
 
 resources: {}
