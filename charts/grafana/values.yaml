@@ -209,14 +209,14 @@ hostAliases: []
   #     - "my.host.com"
 
 ingress:
-  enabled: true
+  enabled: false
   # For Kubernetes >= 1.18 you should specify the ingress-controller via the field ingressClassName
   # See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#specifying-the-class-of-an-ingress
   # ingressClassName: nginx
   # Values can be templated
   annotations: {}
-  kubernetes.io/ingress.class: nginx
-  kubernetes.io/tls-acme: "true"
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
   labels: {}
   path: /
 
@@ -1095,7 +1095,7 @@ imageRenderer:
   revisionHistoryLimit: 10
   networkPolicy:
     # Enable a NetworkPolicy to limit inbound traffic to only the created grafana pods
-    limitIngress: false
+    limitIngress: true
     # Enable a NetworkPolicy to limit outbound traffic to only the created grafana pods
     limitEgress: false
     # Allow additional services to access image-renderer (eg. Prometheus operator when ServiceMonitor is enabled)
